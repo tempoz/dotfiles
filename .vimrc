@@ -55,7 +55,6 @@ let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
 nmap <leader>n :NERDTreeFind<CR>
-" nmap <leader>n :call SplexRevealFile()<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
