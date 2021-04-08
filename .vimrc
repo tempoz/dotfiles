@@ -54,7 +54,7 @@ let g:ctrlp_dont_split = 'NERD'
 let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
-nmap <leader>n :NERDTreeFind<CR>
+nnoremap <C-x> :NERDTreeFind<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
