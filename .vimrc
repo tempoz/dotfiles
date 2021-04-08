@@ -54,17 +54,8 @@ let g:ctrlp_dont_split = 'NERD'
 let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
-function! SplexRevealFile()
-  " try | let p = g:NERDTreePath.New(expand("%:p")) | catch | endtry
-
-	let path = expand("%:p")
-	enew
-	call g:NERDTreeCreator.createWindowTree('')
-  exec 'NERDTreeFind ' . path
-
-endfunction
-
-nmap <leader>n :call SplexRevealFile()<CR>
+nmap <leader>n :NERDTreeFind<CR>
+" nmap <leader>n :call SplexRevealFile()<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
