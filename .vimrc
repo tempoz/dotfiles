@@ -12,8 +12,11 @@ set termguicolors
 
 let mapleader = ","
 
-" Settings for tmux
+" Settings for powerline
 set laststatus=2
+set cmdheight=1
+set noshowmode
+set shortmess+=F
 set term=xterm-256color
 set rtp+=/usr/share/vim/addons
 
@@ -54,6 +57,7 @@ let g:ctrlp_dont_split = 'NERD'
 let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
+" mnemonic: x for explore
 nnoremap <C-x> :NERDTreeFind<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
