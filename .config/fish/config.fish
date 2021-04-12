@@ -1,6 +1,19 @@
-test -z $TMUX; and tmux new -A -s '♠'
+test -z "$TMUX"; and tmux new -A -s '♠'
 set -gx PATH $PATH /usr/local/go/bin ~/go/bin
 set -gx TERM xterm-256color-italic
+
+function vim --wraps vim --description 'alias vim to disable use in vim terminal'
+	if test -n "$VIM_TERMINAL"
+		echo 'Don\'t nest vim sessions!'
+		return 1
+	else
+		set -l vimcmd (which vim)
+		$vimcmd $argv
+	end
+end
+
+set -gx GOPATH ~/go/
+
 set -gx MANPAGER less
 
 # COLORIZE THE OUTPUT OF "LESS" TO MAKE MANPAGES MORE READABLE

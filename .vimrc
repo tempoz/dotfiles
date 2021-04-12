@@ -1,6 +1,10 @@
-if &shell =~# 'fish$'
-    set shell=sh
-endif
+if $VIM_TERMINAL
+	echo "Don't nest vim sessions!"
+	cq!
+end
+" if &shell =~# 'fish$'
+    " set shell=sh
+" endif
 
 set number
 set relativenumber
@@ -8,7 +12,7 @@ set ts=2
 set sw=2
 set noexpandtab
 set backspace=indent,eol,start
-set termguicolors
+" set termguicolors
 
 let mapleader = ","
 
@@ -17,8 +21,11 @@ set laststatus=2
 set cmdheight=1
 set noshowmode
 set shortmess+=F
-set term=xterm-256color
+" set term=xterm-256color
 set rtp+=/usr/share/vim/addons
+
+" Settings for teminal use in vim
+au TerminalOpen * if &buftype == 'terminal' | setlocal bufhidden=hide | endif
 
 call plug#begin()
 Plug 'altercation/vim-colors-solarized'
