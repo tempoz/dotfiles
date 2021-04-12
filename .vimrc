@@ -12,7 +12,7 @@ set ts=2
 set sw=2
 set noexpandtab
 set backspace=indent,eol,start
-" set termguicolors
+set termguicolors
 
 let mapleader = ","
 
@@ -65,7 +65,38 @@ let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
 " mnemonic: x for explore
-nnoremap <C-x> :NERDTreeFind<CR>
+nnoremap <silent> <C-x> :NERDTreeFind<CR>
+
+function! OpenTerminal()
+	vert call term_start(
+		\$SHELL,
+		\	{
+			\ 'term_finish': 'close',
+			\	'ansi_colors': [
+				\'#fbf1c7',
+				\'#cc241d',
+				\'#98971a',
+				\'#d79921',
+				\'#458588',
+				\'#b16286',
+				\'#689d6a',
+				\'#7c6f64',
+				\'#928374',
+				\'#9d0006',
+				\'#79740e',
+				\'#b57614',
+				\'#076678',
+				\'#8f3f71',
+				\'#427b58',
+				\'#3c3836'
+			\]
+		\}
+	\)
+endfunction
+	
+
+" mnemonic: t for terminal
+nnoremap <silent> <C-t> :call OpenTerminal()<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
