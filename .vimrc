@@ -1,7 +1,20 @@
-if $VIM_TERMINAL
-	echo "Don't nest vim sessions!"
-	cq!
-end
+function! OpenFileFromVimTerminal(fn)
+	exec 'leftabove vert split ' . a:fn
+	return 0
+endfunction
+
+if len($VIM_TERMINAL)
+	if len($VIM_SERVERNAME) && len(v:argv) == 2 && v:argv[1][0] != '-'
+		let fn = fnamemodify(v:argv[1], ':p')
+		let expr1 = 'OpenFileFromVimTerminal("' . fn . '")'
+		" echo expr1
+		call remote_expr($VIM_SERVERNAME, expr1)
+		qa!
+	else
+		echo "Nested vim only supports 'vim <filename>'."
+		cq!
+	endif
+endif
 " if &shell =~# 'fish$'
     " set shell=sh
 " endif
