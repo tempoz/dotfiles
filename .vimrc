@@ -47,8 +47,8 @@ Plug 'morhetz/gruvbox'
 Plug 'dag/vim-fish'
 Plug 'tempoz/nerdtree', {'branch': 'splex'}
 Plug 'ctrlpvim/ctrlp.vim', {'tag': '1.81'}
-Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-html coc-git coc-yaml coc-tsserver coc-sh coc-python coc-pyright coc-json coc-go coc-css coc-cmake coc-clangd coc-fish coc-vimlsp'}
+" Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-html coc-git coc-yaml coc-tsserver coc-sh coc-python coc-pyright coc-json coc-go coc-css coc-cmake coc-clangd coc-fish coc-vimlsp @onichandame/coc-proto3'}
 call plug#end()
 
 " Disable vim-go code completion in favor of coc
