@@ -25,6 +25,7 @@ set ts=2
 set sw=2
 set noexpandtab
 set backspace=indent,eol,start
+set ignorecase
 set termguicolors
 
 let mapleader = ","
@@ -57,6 +58,9 @@ let g:go_code_completion_enabled = 0
 " Disable vim-go go to definition mapping
 let g:go_def_mapping_enabled = 0
 
+" let g:node_client_debug = 1 " :call coc#client#open_log()
+
+
 set tagfunc=CocTagFunc
 
 filetype plugin indent on
@@ -77,8 +81,8 @@ let g:ctrlp_dont_split = 'NERD'
 let NERDTreeNaturalSort=1
 let NERDTreeSplexMode=1
 
-" mnemonic: x for explore
-nnoremap <silent> <C-x> :NERDTreeFind<CR>
+" mnemonic: x for eXplore
+nnoremap <silent> <leader>x :NERDTreeFind<CR>
 
 function! OpenTerminal()
 	vert call term_start(
@@ -108,8 +112,8 @@ function! OpenTerminal()
 endfunction
 	
 
-" mnemonic: t for terminal
-nnoremap <silent> <C-t> :call OpenTerminal()<CR>
+" mnemonic: t for Terminal
+nnoremap <silent> <leader>t :call OpenTerminal()<CR>
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
