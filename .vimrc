@@ -50,6 +50,7 @@ Plug 'tempoz/nerdtree', {'branch': 'splex'}
 Plug 'ctrlpvim/ctrlp.vim', {'tag': '1.81'}
 " Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-html coc-git coc-yaml coc-tsserver coc-sh coc-python coc-pyright coc-json coc-go coc-css coc-cmake coc-clangd coc-fish coc-vimlsp @onichandame/coc-proto3'}
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Disable vim-go code completion in favor of coc
@@ -115,6 +116,9 @@ endfunction
 " mnemonic: t for Terminal
 nnoremap <silent> <leader>t :call OpenTerminal()<CR>
 
+" mnemonic: s for syntax
+nnoremap <silent> <leader>s :syntax sync fromstart<CR>
+
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
 
@@ -144,6 +148,8 @@ set shortmess+=c
 if has("patch-8.1.1564")
   " Recently vim can merge signcolumn and number column into one
   set signcolumn=number
+  " But I don't like it.
+  set signcolumn=yes
 else
   set signcolumn=yes
 endif
