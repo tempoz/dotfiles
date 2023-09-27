@@ -52,6 +52,7 @@ Plug 'ctrlpvim/ctrlp.vim', {'tag': '1.81'}
 Plug 'habamax/vim-godot'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-html coc-git coc-yaml coc-tsserver coc-sh coc-python coc-pyright coc-json coc-go coc-css coc-cmake coc-clangd coc-fish coc-vimlsp @onichandame/coc-proto3'}
 Plug 'tpope/vim-fugitive'
+Plug 'OmniSharp/omnisharp-vim'
 call plug#end()
 
 " Disable vim-go code completion in favor of coc
