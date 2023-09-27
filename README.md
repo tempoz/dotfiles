@@ -15,7 +15,7 @@ sudo apt-get install python3-dev clang make man curl powerline git-lfs 7zip libg
 sudo apt-key del 7fa2af80
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
 sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt-get install libxcursor-dev libxinerama1 cuda
+sudo apt-get install libxcursor-dev libxinerama1 cuda gettext
 ```
 
 Gotta build vim (newer than 8.2), do it with these configuration flags:
