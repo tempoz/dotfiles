@@ -2,7 +2,7 @@ if test -z "$TMUX"
 	and status --is-interactive
 	tmux new -A -s '♠'
 end
-for i in /usr/local/go/bin ~/go/bin ~/bin
+for i in /usr/local/go/bin /usr/local/musl/bin ~/go/bin ~/bin ~/.local/bin
 	if not contains $i $PATH
 		set -gx PATH $PATH $i
 	end
@@ -34,3 +34,5 @@ if status --is-interactive
 	source /usr/share/powerline/bindings/fish/powerline-setup.fish
 	powerline-setup
 end
+
+nvm use v20.11.0

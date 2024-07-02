@@ -63,7 +63,6 @@ let g:go_def_mapping_enabled = 0
 
 " let g:node_client_debug = 1 " :call coc#client#open_log()
 
-
 set tagfunc=CocTagFunc
 
 filetype plugin indent on
@@ -120,6 +119,14 @@ nnoremap <silent> <leader>t :call OpenTerminal()<CR>
 
 " mnemonic: s for syntax
 nnoremap <silent> <leader>s :syntax sync fromstart<CR>
+
+" mnemonic: c for copy/paste
+nnoremap <silent> <leader>c :set signcolumn=no<CR>:set nonumber<CR>:set norelativenumber<CR>
+
+" mnemonic: g for gutter
+nnoremap <silent> <leader>g :set signcolumn=yes<CR>:set number<CR>:set relativenumber<CR>
+
+autocmd FileType bzl setlocal shiftwidth=4 tabstop=4 expandtab
 
 """ BEGIN COC.NVIM BOILERPLATE VIMRC
 
