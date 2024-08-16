@@ -38,8 +38,9 @@ set shortmess+=F
 " set term=xterm-256color
 set rtp+=/usr/share/vim/addons
 
-" Settings for teminal use in vim
+" Settings for terminal use in vim
 au TerminalOpen * if &buftype == 'terminal' | setlocal bufhidden=hide | endif
+set termwinscroll=131072
 
 call plug#begin()
 Plug 'altercation/vim-colors-solarized'

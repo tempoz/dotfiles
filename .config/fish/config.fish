@@ -24,8 +24,9 @@ set -gx LESS_TERMCAP_us \e'[01;32m'
 set -gx LESSCHARSET 'utf-8'
 set -gx LESS '-c -i -n -w -z-4 -g -M -R -P%t?f%f :stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
-alias bazel bazelisk
-alias bb "cd ~/src/bb/buildbuddy"
+alias bazel bb
+alias bazelisk bb
+alias cdbb "cd ~/src/bb/buildbuddy"
 
 test -z "$VIM_TERMINAL"; and theme_gruvbox dark medium
 
