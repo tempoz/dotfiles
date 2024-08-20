@@ -54,6 +54,7 @@ Plug 'habamax/vim-godot'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocInstall coc-prettier coc-html coc-git coc-yaml coc-tsserver coc-sh coc-python coc-pyright coc-json coc-go coc-css coc-cmake coc-clangd coc-fish coc-vimlsp @onichandame/coc-proto3'}
 Plug 'tpope/vim-fugitive'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'fladson/vim-kitty'
 call plug#end()
 
 " Disable vim-go code completion in favor of coc
@@ -180,6 +181,13 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+\ coc#pum#visible() ? coc#pum#next(1):
+\ <SID>check_back_space() ? "\<Tab>" :
+\ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
